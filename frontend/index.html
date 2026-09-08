@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#ffffff" />
+<title>Общежитие №1</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<link rel="icon" href="
+data:image/jpeg;base64,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" />
+  
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+  <div class="max-w-md mx-auto min-h-screen relative pb-32">
+    <header class="sticky top-0 z-20 bg-white/95 backdrop-blur px-4 pt-4 pb-3 flex items-center justify-center gap-1.5">
+      <img src="data:image/jpeg;base64,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" class="w-7 h-7 rounded-lg object-cover" alt="" />
+      <div class="text-[16px] font-medium text-gray-700">Общежитие №1</div>
+      <span class="text-gray-400 text-lg leading-none">›</span>
+    </header>
+
+    <!-- ЛЕНТА -->
+    <main id="screen-feed" class="px-4">
+      <!-- Сетка 3 колонки в ширину -->
+      <section class="grid grid-cols-3 gap-3 mt-2">
+        
+        <!-- СТРОКА 1 -->
+        <!-- Левый фильтр: занимает 2 колонки из 3 -->
+        <button type="button" class="tap text-left category-btn col-span-2" data-category="Аренда" onclick="filterCategory('Аренда')">
+          <div class="h-28 rounded-2xl bg-[var(--tile-bg)] overflow-hidden relative transition-all duration-200">
+            <img src="./arenda.jpg" class="w-full h-full object-cover" alt="Аренда">
+          </div>
+          <span class="block text-center mt-1 text-sm font-medium">Аренда</span>
+        </button>
+        
+        <!-- Правый фильтр: занимает 1 колонку из 3 -->
+        <button type="button" class="tap text-left category-btn col-span-1" data-category="Такси" onclick="filterCategory('Такси')">
+          <div class="h-28 rounded-2xl bg-[var(--tile-bg)] overflow-hidden relative transition-all duration-200">
+            <img src="./taxi.jpg" class="w-full h-full object-cover" alt="Такси">
+          </div>
+          <span class="block text-center mt-1 text-sm font-medium">Такси</span>
+        </button>
+        
+        <!-- СТРОКА 2 -->
+        <!-- Левый фильтр: занимает 2 колонки из 3 -->
+        <button type="button" class="tap text-left category-btn col-span-2" data-category="Доставка" onclick="filterCategory('Доставка')">
+          <div class="h-28 rounded-2xl bg-[var(--tile-bg)] overflow-hidden relative transition-all duration-200">
+            <img src="./dostavka.jpg" class="w-full h-full object-cover" alt="Доставка">
+          </div>
+          <span class="block text-center mt-1 text-sm font-medium">Доставка</span>
+        </button>
+        
+        <!-- Правый фильтр: занимает 1 колонку из 3 -->
+        <button type="button" class="tap text-left category-btn col-span-1" data-category="Другое" onclick="filterCategory('Другое')">
+          <div class="h-28 rounded-2xl bg-[var(--tile-bg)] flex items-center justify-center gap-2 transition-all duration-200">
+            <span class="w-3.5 h-3.5 rounded-full bg-gray-600"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-gray-600"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-gray-600"></span>
+          </div>
+          <span class="block text-center mt-1 text-sm font-medium">Другое</span>
+        </button>
+
+      </section>
+
+      <div class="relative w-full">
+        <input 
+          id="search-input" 
+          type="text" 
+          placeholder="Поиск" 
+          class="w-full bg-[var(--input-bg)] rounded-full pl-4 pr-12 py-2.5 outline-none text-[15px]" 
+        />
+  
+        <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+          <img 
+            src="loupe.svg" 
+            alt="Лупа" 
+            class="w-5 h-5 object-contain" 
+          />
+        </div>
+      </div>
+
+      <!-- Контейнер ленты заказов (строчный вид) -->
+      <div id="orders-grid" class="mt-5 flex flex-col gap-3.5"></div>
+      <div id="empty-state" class="hidden text-center mt-10 text-gray-500">Ничего не найдено</div>
+    </main>
+
+    <!-- ФОРМА -->
+    <main id="screen-form" class="hidden px-4">
+      <div class="mt-2 bg-white card-dashed rounded-3xl p-4 flex flex-col gap-3">
+        <input id="ad-title" type="text" maxlength="120" placeholder="Название объявления"
+               class="w-full rounded-2xl bg-[var(--input-bg)] text-gray-800 placeholder:text-gray-500 p-3 outline-none" />
+        <textarea id="ad-description" rows="5" maxlength="2000" placeholder="Описание"
+                  class="w-full resize-none rounded-2xl bg-[var(--input-bg)] text-gray-800 placeholder:text-gray-500 p-3 outline-none"></textarea>
+        <div class="flex gap-2">
+          <select id="ad-type" class="flex-1 min-w-0 bg-[var(--input-bg)] rounded-full px-4 py-2.5 outline-none text-gray-700">
+            <option value="" selected disabled>Тип объявления</option>
+            <option value="Аренда">Аренда</option>
+            <option value="Такси">Такси</option>
+            <option value="Доставка">Доставка</option>
+            <option value="Другое">Другое</option>
+          </select>
+          <input id="ad-price" type="number" min="0" step="1" inputmode="numeric" placeholder="Цена"
+                 class="w-24 shrink-0 bg-[var(--input-bg)] rounded-full px-4 py-2.5 outline-none text-gray-700" />
+        </div>
+        <p id="price-error" class="hidden -mt-1 text-sm text-red-600">Цена не может быть отрицательной.</p>
+        <button id="publish-btn" disabled
+                class="tap w-full bg-[var(--accent)] text-white rounded-full py-3 font-medium disabled:opacity-40">
+          Опубликовать
+        </button>
+      </div>
+    </main>
+
+    <!-- ПРОФИЛЬ -->
+    <main id="screen-profile" class="hidden px-4">
+      <div class="bg-[var(--tile-bg)] rounded-3xl p-5 flex flex-col items-center gap-3 text-center">
+        <div id="user-avatar" class="w-20 h-20 rounded-full bg-[var(--lavender)] text-[var(--lavender-text)] flex items-center justify-center text-3xl font-bold">?</div>
+        <div>
+          <h2 id="profile-name" class="text-xl font-bold">Имя пользователя</h2>
+          <p id="profile-username" class="text-gray-500 text-sm">@username</p>
+        </div>
+        <div class="w-full mt-2 flex gap-2">
+          <input id="profile-room" type="text" placeholder="Номер комнаты (напр. 412)"
+                 class="flex-1 min-w-0 bg-white rounded-full px-4 py-2.5 text-sm outline-none" />
+          <button id="save-room-btn" class="bg-[var(--accent)] text-white px-4 py-2.5 rounded-full text-sm font-medium tap shrink-0">Сохранить</button>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between mt-6 mb-3">
+        <h3 class="font-bold text-lg">Мои объявления</h3>
+        <button id="archive-toggle-btn" type="button" class="tap flex items-center gap-1 text-[var(--accent-dark)] text-sm font-medium">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 13h4"/>
+          </svg>
+          <span id="archive-toggle-label">Архив</span>
+        </button>
+      </div>
+      <div id="my-orders-list" class="flex flex-col gap-3"></div>
+    </main>
+  </div>
+
+  <!-- ПОЛНАЯ ИНФОРМАЦИЯ -->
+  <div id="detail-screen" class="hidden fixed inset-0 z-50 bg-white">
+    <div class="max-w-md mx-auto h-full flex flex-col">
+      <div class="px-4 pt-4 pb-3 flex items-center gap-3 border-b border-gray-100">
+        <button id="detail-back" class="tap w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center" type="button" aria-label="Назад">
+          <span class="text-2xl leading-none">‹</span>
+        </button>
+        <div class="font-semibold">Объявление</div>
+      </div>
+
+      <div id="detail-content" class="modal-scroll px-4 py-4"></div>
+    </div>
+  </div>
+
+  <!-- ТОСТ -->
+  <div id="toast"
+       class="hidden fixed left-1/2 -translate-x-1/2 bottom-24 z-[60] bg-gray-900 text-white rounded-full px-4 py-2 text-sm shadow-lg">
+  </div>
+
+  <!-- НИЖНЯЯ НАВИГАЦИЯ -->
+  <div id="bottom-nav" class="fixed bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur-sm">
+    <div class="max-w-md mx-auto relative fab-wrap nav-line">
+      <button id="tab-form" type="button" class="tap fab-btn" aria-label="Разместить">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </button>
+      <div class="flex items-stretch safe-bottom pt-2.5">
+        <button id="tab-feed" type="button" class="tap flex-1 flex flex-col items-center gap-1 pb-1.5 text-[var(--accent-dark)]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h3v-6h4v6h3a1 1 0 0 0 1-1v-9"/>
+          </svg>
+          <span class="text-[11px] font-medium">Лента</span>
+        </button>
+
+        <div class="flex-1"></div>
+
+        <button id="tab-profile" type="button" class="tap flex-1 flex flex-col items-center gap-1 pb-1.5 text-gray-400">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.6 3.6-6 8-6s8 2.4 8 6"/>
+          </svg>
+          <span class="text-[11px] font-medium">Профиль</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

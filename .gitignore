@@ -1,0 +1,21 @@
+# Виртуальные окружения (в корне проекта)
+/venv/
+/.venv/
+
+# Кэш Python (все папки __pycache__)
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Файл базы данных SQLite (в корне)
+/orders.db
+
+# Дополнительные полезные исключения для Python-проектов
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+*.log
+.DS_Store
+
+/uv.lock
